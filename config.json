@@ -1,0 +1,38 @@
+{
+    databases: {
+        fulltext: {
+            keyPath: "id",
+            indexes: {
+                path: {
+                    keyPath: "path"
+                }
+            },
+            // dummy: true
+        }
+    },
+    commands: {
+        "Tools:Full-Text:Index": {
+            scriptUrl: "./index.js",
+            inputs: {
+                text: true
+            },
+            sandbox: "index"
+        },
+        "Tools:Full-Text:Search": {
+            scriptUrl: "./search.js"
+        },
+        "Tools:Full-Text:Reindex Project": {
+            scriptUrl: "./reindex.js",
+            sandbox: "fulltext"
+        }
+    },
+    handlers: {
+        change: ["Tools:Full-Text:Index"]
+    },
+    keys: {
+        "Tools:Full-Text:Search": {
+            mac: "Command-Shift-S",
+            win: "Ctrl-Shift-S"
+        }
+    }
+}

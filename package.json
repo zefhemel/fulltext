@@ -1,0 +1,12 @@
+{
+    "name": "Full-text project indexing",
+    "uri": "gh:zefhemel/fulltext",
+    "version": "1.0",
+    "description": "A useful new package",
+    "files": [
+        "index.js",
+        "search.js",
+        "nlp.js",
+        "reindex.js"
+    ]
+}
